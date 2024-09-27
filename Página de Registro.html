@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar - Inmobiliaria</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo Inmobiliaria">
+        </div>
+        <div class="menu-bar">
+            <a href="./index.html">Inicio</a>
+            <a href="./Iniciar Sesión.html">Iniciar Sesión</a>
+            <a href="./Página de Inmuebles.html">Inmuebles</a>
+            <a href="./Nosotros.html">Nosotros</a>
+        </div>
+        </nav>
+        <div class="contact">
+            <button>Contáctanos: +57 300 123 4567</button>
+        </div>
+    </header>
+    <section class="carousel">
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img src="./img/diseno-de-casas-modernas-1_0.jpg" alt="Imagen 1">
+                <div class="caption">Encuentra el lugar de tus sueños</div>
+            </div>
+            <div class="carousel-slide">
+                <img src="./img/13232908_1604013343248088_6302168264450648482_n.jpg" alt="Imagen 2">
+                <div class="caption">Vive con estilo</div>
+            </div>
+            <div class="carousel-slide">
+                <img src="./img/luxury-beach-house-sea-view-600nw-2313357873.webp" alt="Imagen 3">
+                <div class="caption">Tu hogar junto al mar</div>
+            </div>
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+        <div class="carousel-indicators">
+            <span class="indicator active"></span>
+            <span class="indicator"></span>
+            <span class="indicator"></span>
+        </div>
+    </section>
+
+    <section class="form-section">
+        <h2>Registro</h2>
+        <form>
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" placeholder="Ingrese su correo electrónico" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" placeholder="Ingrese su contraseña" required>
+            </div>
+            <button type="submit">Registrar</button>
+        </form>
+    </section>
+
+    <footer>
+        <nav>
+            <button class="dropbtn"> <a href="./index.html">Inicio</a></button>
+            <button class="dropbtn"> <a href="./Página de Registro.html">Registrar</a></button>
+            <button class="dropbtn"> <a href="./Iniciar Sesión.html">Iniciar Sesión</a></button>
+            <button class="dropbtn"> <a href="./Nosotros.html">Nosotros</a></button>
+        </nav>
+        <p>&copy; 2024 Inmobiliaria. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        let index = 0;
+const slides = document.querySelectorAll('.carousel-slide');
+const totalSlides = slides.length;
+const indicators = document.querySelectorAll('.indicator');
+const intervalTime = 3000; // Tiempo en milisegundos para el cambio automático (3 segundos)
+
+function updateCarousel() {
+    const offset = -index * 100;
+    document.querySelector('.carousel-container').style.transform = `translateX(${offset}%)`;
+    updateIndicators();
+}
+
+function updateIndicators() {
+    indicators.forEach((indicator, i) => {
+        indicator.classList.toggle('active', i === index);
+    });
+}
+
+function nextSlide() {
+    index = (index + 1) % totalSlides;
+    updateCarousel();
+}
+
+function prevSlide() {
+    index = (index - 1 + totalSlides) % totalSlides;
+    updateCarousel();
+}
+
+document.querySelector('.next').addEventListener('click', nextSlide);
+document.querySelector('.prev').addEventListener('click', prevSlide);
+
+document.querySelectorAll('.indicator').forEach((indicator, i) => {
+    indicator.addEventListener('click', () => {
+        index = i;
+        updateCarousel();
+    });
+});
+
+// Cambiar diapositiva automáticamente cada `intervalTime` milisegundos
+setInterval(nextSlide, intervalTime);
+
+    </script>
+</body>
+</html>

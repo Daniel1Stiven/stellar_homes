@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - Inmobiliaria</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .about {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about h2 {
+            text-align: center;
+            color: #1a237e;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            text-align: center;
+            font-size: 1.2em;
+            color: #34495e;
+            margin-bottom: 30px;
+        }
+
+        .team {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .team-member {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 15px;
+            max-width: 300px;
+            flex: 1;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .team-member h4 {
+            color: #1a237e;
+            margin: 10px 0;
+        }
+
+        .team-member p {
+            color: #34495e;
+        }
+
+        footer {
+            background-color: #1a237e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        footer nav {
+            margin: 10px 0;
+        }
+
+        footer nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        footer nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="./img/sh_blanco-removebg-preview.png" alt="Logo" class="logo">
+        </div>
+    </header>
+    <div class="menu-bar">
+        <a href="PHP/index.php">
+            <button class="dropbtn">Inicio</button>
+        </a>
+        <a href="./PHP/inmueblesIN.php">
+            <button class="dropbtn">Inmuebles</button>
+        </a>
+
+        <a href="./Iniciar Sesión.html">
+            <button class="dropbtn">Iniciar Sesion </button>
+        </a>
+    </div>
+
+
+    <section class="about">
+        <h2>Sobre Nosotros</h2>
+        <p>En Inmobiliaria, nos dedicamos a ofrecer las mejores propiedades para satisfacer tus necesidades. Con años de
+            experiencia en el mercado, nuestro equipo está comprometido en brindarte un servicio excepcional y encontrar
+            el lugar ideal para ti.</p>
+        <h3>Nuestro Equipo</h3>
+        <div class="team">
+            <div class="team-member">
+                <img src="team1.jpg" alt="Duvan Paez">
+                <h4>Duvan Paez</h4>
+                <p>Director General</p>
+            </div>
+            <div class="team-member">
+                <img src="team2.jpg" alt="Juan Huerfano">
+                <h4>Juan Huerfano</h4>
+                <p>Asesora Inmobiliaria</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+
+        <p>&copy; 2024 Inmobiliaria. Todos los derechos reservados.</p>
+    </footer>
+</body>
+
+</html>

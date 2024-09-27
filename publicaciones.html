@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar Inmuebles - Inmobiliaria</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('./img/diseno-de-casas-modernas-1_0.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #1a237e;
+        }
+
+        .header {
+            background-color: #1a237e;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header img {
+            height: 60px;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            margin: 50px;
+            padding: 0;
+        }
+
+        .menu li {
+            margin-left: 20px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu a:hover {
+            background-color: #4850a8;
+        }
+
+        .content {
+            padding: 50px;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .publication-list {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            width: 100%;
+        }
+
+        .publication-card {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(101, 110, 101, 0.856);
+            text-align: center;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .publication-card img {
+            max-width: 100%;
+            border-radius: 5px;
+            height: auto;
+        }
+
+        .publication-card h3 {
+            margin: 15px 0;
+        }
+
+        .publication-card p {
+            margin: 10px 0;
+        }
+
+        .side-container-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .side-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            color: white;
+        }
+
+        .side-container h3 {
+            margin-top: 0;
+        }
+
+        .side-container p {
+            margin: 10px 0;
+        }
+
+        .side-container button {
+            background-color: #FFB300;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .side-container button:hover {
+            background-color: #e67e22;
+        }
+     @media (max-width: 1024px) {
+    .property-details {
+        grid-template-columns: 1fr;
+    }
+
+    .property-status,
+    .property-contact {
+        grid-column: 1 / -1;
+    }
+
+    .property-attributes {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Dispositivos con pantalla menor a 768px (móviles) */
+@media (max-width: 768px) {
+    .property-images img {
+        width: 80px;
+        height: 60px;
+    }
+
+    .property-details {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .property-description,
+    .property-status,
+    .property-contact,
+    .property-attributes {
+        grid-column: 1 / -1;
+    }
+
+    .property-status,
+    .property-contact {
+        max-width: 100%;
+        margin: 10px auto;
+        padding: 10px;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <img src="./img/sh_blanco-removebg-preview.png" alt="Logo" class="logo">
+        <ul class="menu">
+            <li><a href="./publicacionesinmobiliaria.html">Editar mis Publicaciones</a></li>
+            <li><a href="./Perfilinmobiliario.html">Volver</a></li>
+          
+        </ul>
+    </header>
+
+    <div class="content">
+        <h2>Mis Publicaciones de Inmuebles</h2>
+        <div class="publication-list">
+            <div class="publication-card">
+                <img src="./img/luxury-beach-house-sea-view-600nw-2313357873.webp" alt="Inmueble 1">
+                <h3>Inmueble 1</h3>
+                <p>Descripción breve del inmueble 1. Incluye detalles importantes y características.</p>
+                <p>Ubicación: Calle Falsa 456</p>
+                <p>Estado: Disponible</p>
+            </div>
+            <div class="publication-card">
+                <img src="./img/diseno-de-casas-modernas-1_0.jpg" alt="Inmueble 2">
+                <h3>Inmueble 2</h3>
+                <p>Descripción breve del inmueble 2. Incluye detalles importantes y características.</p>
+                <p>Ubicación: Calle Verdadera 789</p>
+                <p>Estado: Vendido</p>
+            </div>
+        </div>
+
+        <div class="side-container-wrapper">
+            <div class="side-container">
+                <h3>Nombre de la Inmobiliaria</h3>
+                <p id="direccion">Dirección: Calle Falsa 123</p>
+                <p id="telefono">Teléfono: 123-456-789</p>
+                <p id="email">Email: contacto@inmobiliaria.com</p>
+                <p id="descripcion">Descripción: Empresa dedicada a la venta y arriendo de inmuebles.</p>
+                <button onclick="editarInformacion()">Editar Información</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function editarInformacion() {
+            const direccion = prompt("Editar Dirección:", document.getElementById("direccion").textContent);
+            const telefono = prompt("Editar Teléfono:", document.getElementById("telefono").textContent);
+            const email = prompt("Editar Email:", document.getElementById("email").textContent);
+            const descripcion = prompt("Editar Descripción:", document.getElementById("descripcion").textContent);
+
+            if (direccion) document.getElementById("direccion").textContent = direccion;
+            if (telefono) document.getElementById("telefono").textContent = telefono;
+            if (email) document.getElementById("email").textContent = email;
+            if (descripcion) document.getElementById("descripcion").textContent = descripcion;
+        }
+    </script>
+</body>
+
+</html>

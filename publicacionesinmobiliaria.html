@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar Inmueble</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0px;
+            padding: 0;
+        }
+
+        header {
+            background-color: #1a237e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header .logo {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        header .logo img {
+            max-width: 100px;
+        }
+
+        header h1 {
+            margin: 10px 0;
+            font-size: 2em;
+        }
+
+        .menu-bar {
+            margin-top: 10px;
+        }
+
+        .menu-bar a {
+            color: white;
+            text-decoration: none;
+            background-color: #3949ab;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .menu-bar a:hover {
+            background-color: #283593;
+        }
+
+        .form-wrapper {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 1000px;
+            width: 90%;
+        }
+
+        .form-wrapper button {
+            background-color: #FFB300;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .form-wrapper button:hover {
+            background-color: #e67e22;
+        }
+
+        table {
+            width: 90%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #1a237e;
+            color: white;
+        }
+
+        td button {
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button-edit {
+            background-color: #3949ab;
+            color: white;
+        }
+
+        .button-edit:hover {
+            background-color: #283593;
+        }
+
+        .button-delete {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .button-delete:hover {
+            background-color: #c0392b;
+        }
+
+        footer {
+            background-color: #1a237e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        footer nav button {
+            background-color: #3949ab;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            margin: 0 5px;
+            transition: background-color 0.3s;
+        }
+
+        footer nav button a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer nav button:hover {
+            background-color: #283593;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .form-wrapper {
+                padding: 20px;
+            }
+
+            .form-wrapper button {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+
+            table th, table td {
+                font-size: 0.9em;
+                padding: 10px;
+            }
+
+            footer nav button {
+                padding: 8px 16px;
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            .menu-bar {
+                margin-top: 20px;
+            }
+
+            .form-wrapper {
+                padding: 15px;
+                width: 95%;
+            }
+
+            .form-wrapper button {
+                padding: 8px 16px;
+                font-size: 0.9em;
+            }
+
+            table th, table td {
+                font-size: 0.8em;
+                padding: 8px;
+            }
+
+            footer nav button {
+                padding: 6px 12px;
+                font-size: 0.8em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.2em;
+            }
+
+            .menu-bar {
+                margin-top: 20px;
+            }
+
+            .form-wrapper {
+                padding: 10px;
+                width: 100%;
+            }
+
+            .form-wrapper button {
+                padding: 6px 12px;
+                font-size: 0.8em;
+            }
+
+            table th, table td {
+                font-size: 0.7em;
+                padding: 6px;
+            }
+
+            footer nav button {
+                padding: 4px 8px;
+                font-size: 0.7em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="./img/sh_blanco-removebg-preview.png" alt="Logo Inmobiliaria">
+        </div>
+        
+        <div class="menu-bar">
+            <a href="./paginainmobiliaria.html">Inicio</a>
+        </div>
+    </header>
+
+    <section class="form-wrapper">
+        <button type="button">AÑADIR NUEVA</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>NO.</th>
+                    <th>Nombre Publicación</th>
+                    <th>CATEGORÍA</th>
+                    <th>FECHA</th>
+                    <th colspan="2" style="text-align: center;">SERVICIO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Smith Eduardo</td>
+                    <td>Conjunto</td>
+                    <td>05/30/2024</td>
+                    <td><button class="button-edit">Editar</button></td>
+                    <td><button class="button-delete">Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Smith Eduardo</td>
+                    <td>Conjunto</td>
+                    <td>05/30/2024</td>
+                    <td><button class="button-edit">Editar</button></td>
+                    <td><button class="button-delete">Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Smith Eduardo</td>
+                    <td>Conjunto</td>
+                    <td>05/30/2024</td>
+                    <td><button class="button-edit">Editar</button></td>
+                    <td><button class="button-delete">Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Smith Eduardo</td>
+                    <td>Conjunto</td>
+                    <td>05/30/2024</td>
+                    <td><button class="button-edit">Editar</button></td>
+                    <td><button class="button-delete">Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Smith Eduardo</td>
+                    <td>Conjunto</td>
+                    <td>05/30/2024</td>
+                    <td><button class="button-edit">Editar</button></td>
+                    <td><button class="button-delete">Eliminar</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <nav>
+            <button><a href="./paginainmobiliaria.html">Inicio</a></button>
+            <button><a href="./index.html">Cerrar sesión</a></button>
+            <button><a href="./publicaciones.html">Volver</a></button>
+        </nav>
+        <p>&copy; 2024 Inmobiliaria. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar Inmueble</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+           
+            <img src="./img/sh_blanco-removebg-preview.png" alt="Logo Inmobiliaria">
+            
+        </div>
+        <div class="menu-bar">
+            <nav>
+                <a href="./Perfilinmobiliario.html">Volver</a>
+                
+            </nav>
+        </div>
+    </header>
+
+    <section class="publish-section">
+        <h1>Publicar Inmueble</h1>
+        
+        <form class="publish-form">
+            <div class="form-group">
+                <label for="property-images">Imágenes del Inmueble</label>
+                <input type="file" id="property-images" name="property-images" multiple>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Descripción</label>
+                <textarea id="description" name="description" placeholder="Ingrese una descripción del inmueble"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="location">Ubicación</label>
+                <input type="text" id="location" name="location" placeholder="Ingrese la ubicación del inmueble">
+            </div>
+
+            <div class="form-group">
+                <label for="contact-info">Datos de Contacto</label>
+                <input type="text" id="contact-info" name="contact-info" placeholder="Ingrese los datos de contacto">
+            </div>
+
+            <div class="form-group">
+                <label for="owner-name">Nombre del Propietario</label>
+                <input type="text" id="owner-name" name="owner-name" placeholder="Ingrese el nombre del propietario">
+            </div>
+
+            <div class="form-group">
+                <label for="property-type">Tipo de Inmueble</label>
+                <select id="property-type" name="property-type">
+                    <option value="apartment">Apartamento</option>
+                    <option value="house">Casa</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="transaction-type">Transacción</label>
+                <select id="transaction-type" name="transaction-type">
+                    <option value="sale">Venta</option>
+                    <option value="rent">Renta</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Publicar Inmueble</button>
+            </div>
+        </form>
+    </section>
+
+    <footer>
+        <nav>
+            
+        </nav>
+        <p>&copy; 2024 Inmobiliaria. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

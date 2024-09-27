@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil De Usuario</title>
+
+    <style>
+        body {
+            margin: -35px;
+            padding: -20px;
+            font-family: Arial, sans-serif;
+            background-image: url('./img/diseno-de-casas-modernas-1_0.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #1a237e;
+        }
+
+        .header {
+            background-color: #1a237e;
+            padding: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header img {
+            height: 110px;
+            margin: 10px;
+            padding: 100;
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            margin: 50px;
+            padding: 0;
+        }
+
+        .menu li {
+            margin-left: 20px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu a:hover {
+            background-color: #4850a8;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px;
+            color: #333;
+        }
+
+        .contenedores {
+            display: grid;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .contenedor {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(101, 110, 101, 0.856);
+            text-align: center;
+            font-size: 1.2em;
+            cursor: pointer;
+            color: #7a7777;
+        }
+
+        .contenedor a {
+            text-decoration: none;
+            color: rgb(33, 41, 255)
+        }
+
+        .contenedor:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .side-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            color: white;
+        }
+
+        .side-container h3 {
+            margin-top: 0;
+        }
+
+        .side-container p {
+            margin: 10px 0;
+        }
+
+        .side-container button {
+            background-color: #FFB300;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .side-container button:hover {
+            background-color: #e67e22;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header img {
+                height: 40px;
+            }
+
+            .menu a {
+                font-size: 0.9em;
+                padding: 3px 8px;
+            }
+
+            .side-container {
+                width: 100%;
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 0px) {
+            .header img {
+                height: 30px;
+            }
+
+            .menu {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .menu li {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+
+            .menu a {
+                padding: 5px;
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <img src="./img/sh_blanco-removebg-preview.png" alt="Logo Inmobiliaria">
+        <ul class="menu">
+            <li><a href="PHP/usuarioregistrado.php">Volver</a></li>
+        </ul>
+    </header>
+
+    <div class="content">
+        <div class="contenedores">
+            <div class="contenedor"><a href="./PHP/misdatos.php">Mis Datos</a></div>
+            <div class="contenedor"><a href="./php4/Cargardocumentos.php">Cargar Documentos</a></div>
+           
+        </div>
+</body>
+
+</html>

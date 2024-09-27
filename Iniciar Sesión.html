@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Tus estilos existentes */
+        .button {
+            background-color: #3949ab;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #283593;
+        }
+
+        .login-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1em;
+        }
+
+        .form-group input:focus {
+            border-color: #FFB300;
+            box-shadow: 0 0 5px rgba(255, 179, 0, 0.5);
+            outline: none;
+        }
+
+        button {
+            background-color: #FFB300;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #e67e22;
+        }
+
+        .back-link,
+        .restore-password-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+
+        .back-link {
+            color: #dcdde6;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .restore-password-link {
+            color: #1a237e;
+            margin-top: 15px;
+        }
+
+        .restore-password-link:hover {
+            text-decoration: underline;
+        }
+
+        .register-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .register-container .register-button {
+            background-color: #3949ab;
+            padding: 10px;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .register-container .register-button:hover {
+            background-color: #283593;
+        }
+
+        /* Estilos para el popup */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .popup h3 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        .popup button {
+            background-color: #FFB300;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .popup button:hover {
+            background-color: #e67e22;
+        }
+
+        .popup-close {
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .popup-close:hover {
+            background-color: #c0392b;
+        }
+
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 500;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="./PHP/index.php" class="button">Volver a la página principal</a>
+    </header>
+    <div class="login-container">
+        <h2>Iniciar sesión</h2>
+
+        <!-- Selector de tipo de inicio de sesión -->
+        <div class="form-group">
+            <label for="login-type">Iniciar sesión como:</label>
+            <select id="login-type" onchange="toggleForms()" required>
+                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="user">Usuario</option>
+                <option value="inmobiliaria">Inmobiliaria</option>
+            </select>
+        </div>
+
+        <form id="user-form" class="login-form" action="./InicioSesionUsuario.php" method="post" style="display:none;">
+            <fieldset>
+                <legend>Iniciar sesión como Usuario</legend>
+                <div class="form-group">
+                    <label for="user-email">Correo electrónico:</label>
+                    <input type="email" id="user-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="user-password">Contraseña:</label>
+                    <input type="password" id="user-password" name="password" required>
+                </div>
+                <button type="submit">Iniciar Sesión</button>
+            </fieldset>
+            <a href="./ResContraseña.html" class="restore-password-link">¿Olvidaste tu contraseña?</a>
+        </form>
+
+        <!-- Formulario de inicio de sesión como inmobiliaria -->
+        <form id="inmobiliaria-form" class="login-form" action="./inmobiliariaregistrada.html" method="post"
+            style="display:none;">
+            <fieldset>
+                <legend>Iniciar sesión como Inmobiliaria</legend>
+                <div class="form-group">
+                    <label for="inmobiliaria-email">Correo electrónico:</label>
+                    <input type="email" id="inmobiliaria-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="inmobiliaria-password">Contraseña:</label>
+                    <input type="password" id="inmobiliaria-password" name="password" required>
+                </div>
+                <button type="submit">Iniciar Sesión</button>
+            </fieldset>
+            <a href="./ResContraseña.html" class="restore-password-link">¿Olvidaste tu contraseña?</a>
+        </form>
+
+        <div class="register-container">
+            <div class="register-button" onclick="openPopup()">Registrarse</div>
+        </div>
+    </div>
+
+    <!-- Popup de registro -->
+    <div id="popup" class="popup">
+        <h3>Registrarse como:</h3>
+        <button onclick="location.href='./LgInmobiliaria.php'">Inmobiliaria</button>
+        <button onclick="location.href='./Lgusario.php'">Cliente</button>
+        <div class="popup-close" onclick="closePopup()">Cerrar</div>
+    </div>
+
+    <div id="popup-overlay" class="popup-overlay"></div>
+
+    <script>
+        function toggleForms() {
+            const userForm = document.getElementById('user-form');
+            const inmobiliariaForm = document.getElementById('inmobiliaria-form');
+            const loginType = document.getElementById('login-type').value;
+
+            if (loginType === 'user') {
+                userForm.style.display = 'block';
+                inmobiliariaForm.style.display = 'none';
+            } else if (loginType === 'inmobiliaria') {
+                userForm.style.display = 'none';
+                inmobiliariaForm.style.display = 'block';
+            } else {
+                userForm.style.display = 'none';
+                inmobiliariaForm.style.display = 'none';
+            }
+        }
+
+        function openPopup() {
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('popup-overlay').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('popup-overlay').style.display = 'none';
+        }
+
+        // Añadido para manejar la redirección después del envío del formulario
+        document.getElementById('user-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevenir el envío normal del formulario
+            if (this.checkValidity()) { // Verificar si los campos están llenos
+                window.location.href = 'php/usuarioregistrado.php'; // Redirigir a la página deseada
+            }
+        });
+
+        document.getElementById('inmobiliaria-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevenir el envío normal del formulario
+            if (this.checkValidity()) { // Verificar si los campos están llenos
+                window.location.href = './Perfilinmobiliario.php'; // Redirigir a la página deseada
+            }
+        });
+    </script>
+</body>
+
+</html>

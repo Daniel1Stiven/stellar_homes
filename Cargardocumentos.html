@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargar Documentos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* Estilos adicionales pueden ir aquí si es necesario */
+</style>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./img/sh_blanco-removebg-preview.png" alt="Logo Inmobiliaria">
+        </div>
+        <div class="menu-bar">
+            <nav>
+                <a href="./perfilusuario.html">Volver</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="publish-section">
+        <h1>Cargar Documentos</h1>
+        <form id="subir-form" class="publish-form" action="procesar.php" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="description">Nombre Completo del Solicitante</label>
+                <input type="text" id="Nombre" name="Nombre" placeholder="Ingrese su Nombre" required>
+            </div>
+
+            <div class="form-group">
+                <label for="location">Correo Electrónico</label>
+                <input type="email" id="email" name="email" placeholder="Ingrese el Correo Electrónico" required>
+            </div>
+            <div class="form-group">
+                <label for="contact-info">Número de Documento</label>
+                <input type="number" id="documento" name="documento" placeholder="Ingrese el número de los documentos" required>
+            </div>
+
+            <div class="form-group">
+                <label for="property-images">Cargar Documento</label>
+                <input type="file" id="property-images" name="property-images[]" multiple>
+            </div>
+
+            <div class="form-group">
+                <label for="certificacion-laboral">Certificación Laboral</label>
+                <input type="file" id="certificacion-laboral" name="certificacion-laboral[]" multiple>
+            </div>
+
+            <div class="form-group">
+                <label for="extractos-bancarios">Últimos Extractos Bancarios</label>
+                <input type="file" id="extractos-bancarios" name="extractos-bancarios[]" multiple>
+            </div>
+
+            <div class="form-group">
+                <label for="certificados-ingresos">Certificados de Ingresos</label>
+                <input type="file" id="certificados-ingresos" name="certificados-ingresos[]" multiple>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="dropbtn">Subir Documentos</button>
+            </div>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2024 Inmobiliaria. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
